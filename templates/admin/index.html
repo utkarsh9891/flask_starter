@@ -1,0 +1,17 @@
+{% extends 'admin/master.html' %}
+{% block body %}
+{{ super() }}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <h1>FlaskDummy Admin</h1>
+            {% if not current_user.is_authenticated %}
+            <p>Login with your credentials to access the flask dummy database.</p>
+            <p>
+                <a class="btn btn-primary" href="{{ url_for('security.login') }}">login</a>
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock body %}
